@@ -672,11 +672,13 @@ hr {
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 .profile .avatar > img {
-  width: 46px;
-  height: 46px;
-  margin: 2px;
+  width: 120%;
 }
 .profile .feeds {
   height: 68px;
