@@ -226,7 +226,7 @@ if (!window['String']['prototype']['trim']) {
           '<div class="com-avatar"><img id="JELON__loginAvatar" src="/img/unsigned_avatar.jpg" alt="avatar"></div>',
           '<div class="com-text">',
             '<div class="main">',
-              '<textarea class="text-area-edited show" id="JELON__editBox" placeholder="欢迎评论！"></textarea>',
+              '<textarea class="text-area-edited show" id="JELON__editBox" placeholder="欢迎留言！"></textarea>',
               '<div class="text-area-preview" id="JELON__previewBox"></div>',
             '</div>',
             '<div class="switch">',
@@ -251,7 +251,7 @@ if (!window['String']['prototype']['trim']) {
     list: {
       tpl: [
         '<section class="list-wrap" id="JELON__commentList">',
-          '<div class="text-center">正在加载评论</div>',
+          '<div class="text-center">正在加载留言</div>',
         '</section>'
       ].join(''),
       /**
@@ -269,7 +269,7 @@ if (!window['String']['prototype']['trim']) {
         var pageList = [];
         var allPages = Math.ceil(comments / constants.PER_PAGE);
         if (comments === 0) {
-          html = '<div class="text-center">暂无评论</div>';
+          html = '<div class="text-center">暂无留言</div>';
         } else {
           var item = '';
           var pageItem = '';
@@ -366,7 +366,7 @@ if (!window['String']['prototype']['trim']) {
             }
           }
           html = [
-            '<header class="list-header">总共 <span class="comments-num" id="JELON__commentsNum">' + JL.issueComments + '</span> 条评论</header>',
+            '<header class="list-header">总共 <span class="comments-num" id="JELON__commentsNum">' + JL.issueComments + '</span> 条留言</header>',
             '<ul class="list">',
               htmlList.join(''),
             '</ul>',
@@ -424,7 +424,7 @@ if (!window['String']['prototype']['trim']) {
           $('JELON__commentsNum').innerHTML = JL.issueComments + 1;
         } else {
           $('JELON__commentList').innerHTML = [
-            '<header class="list-header">总共 <span class="comments-num" id="JELON__commentsNum">' + (JL.issueComments + 1) + '</span> 条评论</header>',
+            '<header class="list-header">总共 <span class="comments-num" id="JELON__commentsNum">' + (JL.issueComments + 1) + '</span> 条留言</header>',
             '<ul class="list">',
               '<li class="item">',
                 item,
@@ -463,15 +463,15 @@ if (!window['String']['prototype']['trim']) {
       }
     },
     tips: {
-      tpl: '<section class="tips clearfix" id="JELON__comment_tips">注：评论支持 markdown 语法！</section>',
+      tpl: '<section class="tips clearfix" id="JELON__comment_tips">注：留言支持 markdown 语法！</section>',
       update: function () {
         var userInfo = localStorage.getItem(constants.USER_INFO_KEY);
         var handler = '';
         // 如果文章还没关联 issue 并且登录账号是自己时
         if (userInfo && JSON.parse(userInfo).login === JL.options.owner && JL.issueNumber === 0) {
-          handler = '<a href="javascript: JELON.Actions.createIssue();" class="init" title="文章关联 issue">初始化评论</a>';
+          handler = '<a href="javascript: JELON.Actions.createIssue();" class="init" title="文章关联 issue">初始化留言</a>';
         }
-        $('JELON__comment_tips').innerHTML = handler + '注：评论支持 markdown 语法！';
+        $('JELON__comment_tips').innerHTML = handler + '注：留言支持 markdown 语法！';
       }
     },
     flashTitle: function (title) {
