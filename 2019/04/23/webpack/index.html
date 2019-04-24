@@ -131,6 +131,7 @@
 <li>模块化程序(配置过程忽略此步骤)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cale.js</span><br><span class="line">function add(a,b)&#123;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line">module.exports= &#123;addFunc:add&#125;;</span><br><span class="line"></span><br><span class="line">main.js</span><br><span class="line">var cale = require(&apos;./cale.js&apos;);</span><br><span class="line">console.log(cale.addFunc(2,3));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<a id="more"></a>
 <h3 id="生产版本配置配置文件"><a href="#生产版本配置配置文件" class="headerlink" title="生产版本配置配置文件"></a>生产版本配置配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var path = require(&apos;path&apos;); //路径处理模块</span><br><span class="line">var webpack = require(&apos;webpack&apos;);</span><br><span class="line">var htmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);</span><br><span class="line">module.exports=&#123;</span><br><span class="line">    entry:&apos;./src/main.js&apos;,//打包的源文件(人口文件)</span><br><span class="line">    output：&#123;</span><br><span class="line">        path:path.resolve(__dirname,&apos;./dist/&apos;),//打包后文件存放的目录</span><br><span class="line">        filename:&apos;build.js&apos;//打包后输出的文件名称</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins:[</span><br><span class="line">        new htmlWebpackPlugin(&#123;</span><br><span class="line">            title:&apos;index&apos;, //生成页面的标题</span><br><span class="line">            filename:&apos;index.html&apos;, //生成的文件名称</span><br><span class="line">            template:&apos;index.html&apos;//模板文件</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>打包css</p>
@@ -202,6 +203,26 @@
 
 
 <!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br>
+        <a href="/2019/04/24/hexo-github/">
+            
+                hexo+github
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br>
+        <a href="javascript: void(0);">没有下一篇了</a>
+    </span>
+    
+</div>
 
 <!-- 文章评论 -->
 
@@ -294,7 +315,7 @@
     
     <li>
         <a href="/categories/Web前端/">Web前端</a>
-        <span class="badge">(1)</span>
+        <span class="badge">(2)</span>
     </li>
     
 </ul>
@@ -305,6 +326,10 @@
         <h3 class="widget-hd"><strong>热门标签</strong></h3>
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (1)</a>
+  
+    <a class="tag-item" href="/tags/github/" title="github">github (1)</a>
   
     <a class="tag-item" href="/tags/webpack/" title="webpack">webpack (1)</a>
   
