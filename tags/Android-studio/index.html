@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
     <meta name="baidu-site-verification" content="dIcXMeY8Ya">
     
-    <title>`hexo`标签下的文章 | Hexo</title>
+    <title>`Android studio`标签下的文章 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="keywords" content="lidan, 前端, Web, 前端开发">
     <meta name="description" content="lidan个人前端小站">
@@ -56,19 +56,19 @@
         <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
         <ul class="menu hidden" id="JELON__menu">
             
-            <li rel="/tags/hexo/index.html" class="item ">
+            <li rel="/tags/Android-studio/index.html" class="item ">
                 <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
             </li>
             
-            <li rel="/tags/hexo/index.html" class="item ">
+            <li rel="/tags/Android-studio/index.html" class="item ">
                 <a href="/lab/" title="DEMO" class="icon-lab">&nbsp;DEMO</a>
             </li>
             
-            <li rel="/tags/hexo/index.html" class="item ">
+            <li rel="/tags/Android-studio/index.html" class="item ">
                 <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
             </li>
             
-            <li rel="/tags/hexo/index.html" class="item ">
+            <li rel="/tags/Android-studio/index.html" class="item ">
                 <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
             </li>
             
@@ -120,7 +120,7 @@
     <h3 class="widget-hd">
         <strong>
             
-                `hexo`标签下的文章
+                `Android studio`标签下的文章
             
         </strong>
     </h3>
@@ -135,26 +135,24 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/04/24/hexo-github/">
-    		hexo+github
+    	<!-- <a href="https://creamlidan.github.io/2019/05/31/nox_adb/">
+    		adb server version (41) doesn&#39;t match this client (39); killing...
     	</a>-->
         <a href="javascript: void(0);">
-            hexo+github
+            adb server version (41) doesn&#39;t match this client (39); killing...
         </a>
     </h3>
 
     </header>
     <p class="post-meta">
         lidan 发表于
-        <time datetime="2019-04-24T03:00:23.000Z">2019-04-24</time>
+        <time datetime="2019-05-31T05:21:04.855Z">2019-05-31</time>
         &nbsp;&nbsp;
         <span class="post-tags">
             标签：
             
     
-        <a href="/tags/hexo/" title="hexo">hexo</a> / 
-    
-        <a href="/tags/github/" title="github">github</a>
+        <a href="/tags/Android-studio/" title="Android studio">Android studio</a>
     
 
         </span>
@@ -163,29 +161,37 @@
     <div class="post-content">
         <div class="post-excerpt">
             
-                <h3 id="hexo简介"><a href="#hexo简介" class="headerlink" title="hexo简介"></a>hexo简介</h3><ul>
-<li>快速、简洁且高效的博客框架</li>
-<li>支持Markdown</li>
-<li>丰富的插件，扩展性强</li>
-<li>一键部署</li>
-</ul>
-<h3 id="使用操作步骤"><a href="#使用操作步骤" class="headerlink" title="使用操作步骤"></a>使用操作步骤</h3><blockquote>
-<p>注意事项:很多命令可以用cmd来完成，但是部分命令会有一些问题，为避免不必要的问题，建议全部使用git bash来执行<br>使用hexo搭建博客需安装node和git请先行安装(如果安装完成运行命令时出错,注意环境变量配置)</p>
+                <h4 id="链接不上夜神模拟器提示adb版本不符"><a href="#链接不上夜神模拟器提示adb版本不符" class="headerlink" title="- 链接不上夜神模拟器提示adb版本不符"></a>- 链接不上夜神模拟器提示adb版本不符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List of devices attached</span><br><span class="line">adb server version (41) doesn&apos;t match this client (39); killing...</span><br><span class="line">* daemon started successfully *</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解决方案</p>
 <ul>
-<li>命令步骤  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 全局安装</span><br><span class="line">npm install hexo-cli -g </span><br><span class="line"></span><br><span class="line">// 在想要建立博客本地文件位置内打开命令运行建立一个叫初始化blog项目</span><br><span class="line">hexo init blog  </span><br><span class="line"></span><br><span class="line">cd blog</span><br><span class="line">//进入项目后安装依赖包</span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">//启动本地化服务即可查看项目</span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line">// 生成</span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">//启动本地服务并监听,修改了配置文件还是需要从新生成一遍才可以看到效果</span><br><span class="line">hexo s --watch</span><br><span class="line"></span><br><span class="line">//如果报一些奇怪的错误不知道怎么解决不妨清除一下重新生成发布</span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-</li>
+<li>先关闭所有 adb 的进程；</li>
+<li>将 SDK 的 platform-tools 目录下的 adb.exe 文件复制到电脑任意路径下，并改名为 nox_adb.exe 。然后再把改名后的文件拷贝到夜神模拟器安装路径的 bin 目录下替换原来的 nox_adb.exe 文件</li>
+<li>将 SDK 的 platform-tools 目录下的 adb.exe 替换夜神模拟器安装路径的 bin 目录下替换原来的adb.exe(夜神bin目录下有两个需要替换)</li>
+<li>如果还是版本不一致注意一下将 SDK 的 platform-tools 目录下的 adb.exe与将 SDK 的 tools下的adb版本是否一致</li>
+<li>重启模拟器。</li>
+<li>命令窗口输入<code>adb devices</code>查看设备信息</li>
 </ul>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//如果出现这样的信息就ok了</span><br><span class="line">List of devices attached</span><br><span class="line">127.0.0.1:62025 device</span><br><span class="line">//如果设备信息为空的话这个时候需要连接一下夜神adb</span><br><span class="line">List of devices attached</span><br></pre></td></tr></table></figure>
+<ul>
+<li>连接夜神adb</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nox_adb.exe connect 127.0.0.1:62001</span><br><span class="line">如果报错就运行</span><br><span class="line">./nox_adb.exe connect 127.0.0.1:62001</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果出现adb关闭,需要注意一下夜神的android版本必须切换到5以上,bin目录下打开多开器，点击添加模拟器下载android5模拟器，然后启动，在链接就ok了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BUILD SUCCESSFUL in 31s</span><br><span class="line">26 actionable tasks: 1 executed, 25 up-to-date</span><br><span class="line">info Running D:\androidSDK_ld/platform-tools/adb -s 127.0.0.1:62001 reverse tcp:8081 tcp:8081</span><br><span class="line">adb.exe: error: closed</span><br><span class="line">info Could not run adb reverse: Command failed: D:\androidSDK_ld/platform-tools/adb -s 127.0.0.1:62001 reverse tcp:8081 tcp:8081</span><br><span class="line">info Starting the app on 127.0.0.1:62001 (D:\androidSDK_ld/platform-tools/adb -s 127.0.0.1:62001 shell am start -n com.awesomeproject/com.awesomeproject.MainActivity)...</span><br><span class="line">Starting: Intent &#123; cmp=com.awesomeproject/.MainActivity &#125;</span><br></pre></td></tr></table></figure>
             
             <p class="more">
-                <a href="https://creamlidan.github.io/2019/04/24/hexo-github/">阅读剩下更多</a>
+                <a href="https://creamlidan.github.io/2019/05/31/nox_adb/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img>
-            <!-- <a href="https://creamlidan.github.io/2019/04/24/hexo-github/" title="hexo+github">-->
-            <a href="javascript: void(0);" title="hexo+github">
+            <!-- <a href="https://creamlidan.github.io/2019/05/31/nox_adb/" title="adb server version (41) doesn&#39;t match this client (39); killing...">-->
+            <a href="javascript: void(0);" title="adb server version (41) doesn&#39;t match this client (39); killing...">
                 
-                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/4.jpg" alt="默认配图">
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图">
                 
             </a>
         </div>

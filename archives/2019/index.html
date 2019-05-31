@@ -136,6 +136,80 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
+    	<!-- <a href="https://creamlidan.github.io/2019/05/31/nox_adb/">
+    		adb server version (41) doesn&#39;t match this client (39); killing...
+    	</a>-->
+        <a href="javascript: void(0);">
+            adb server version (41) doesn&#39;t match this client (39); killing...
+        </a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        lidan 发表于
+        <time datetime="2019-05-31T05:21:04.855Z">2019-05-31</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Android-studio/" title="Android studio">Android studio</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="链接不上夜神模拟器提示adb版本不符"><a href="#链接不上夜神模拟器提示adb版本不符" class="headerlink" title="- 链接不上夜神模拟器提示adb版本不符"></a>- 链接不上夜神模拟器提示adb版本不符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List of devices attached</span><br><span class="line">adb server version (41) doesn&apos;t match this client (39); killing...</span><br><span class="line">* daemon started successfully *</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解决方案</p>
+<ul>
+<li>先关闭所有 adb 的进程；</li>
+<li>将 SDK 的 platform-tools 目录下的 adb.exe 文件复制到电脑任意路径下，并改名为 nox_adb.exe 。然后再把改名后的文件拷贝到夜神模拟器安装路径的 bin 目录下替换原来的 nox_adb.exe 文件</li>
+<li>将 SDK 的 platform-tools 目录下的 adb.exe 替换夜神模拟器安装路径的 bin 目录下替换原来的adb.exe(夜神bin目录下有两个需要替换)</li>
+<li>如果还是版本不一致注意一下将 SDK 的 platform-tools 目录下的 adb.exe与将 SDK 的 tools下的adb版本是否一致</li>
+<li>重启模拟器。</li>
+<li>命令窗口输入<code>adb devices</code>查看设备信息</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//如果出现这样的信息就ok了</span><br><span class="line">List of devices attached</span><br><span class="line">127.0.0.1:62025 device</span><br><span class="line">//如果设备信息为空的话这个时候需要连接一下夜神adb</span><br><span class="line">List of devices attached</span><br></pre></td></tr></table></figure>
+<ul>
+<li>连接夜神adb</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nox_adb.exe connect 127.0.0.1:62001</span><br><span class="line">如果报错就运行</span><br><span class="line">./nox_adb.exe connect 127.0.0.1:62001</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果出现adb关闭,需要注意一下夜神的android版本必须切换到5以上,bin目录下打开多开器，点击添加模拟器下载android5模拟器，然后启动，在链接就ok了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BUILD SUCCESSFUL in 31s</span><br><span class="line">26 actionable tasks: 1 executed, 25 up-to-date</span><br><span class="line">info Running D:\androidSDK_ld/platform-tools/adb -s 127.0.0.1:62001 reverse tcp:8081 tcp:8081</span><br><span class="line">adb.exe: error: closed</span><br><span class="line">info Could not run adb reverse: Command failed: D:\androidSDK_ld/platform-tools/adb -s 127.0.0.1:62001 reverse tcp:8081 tcp:8081</span><br><span class="line">info Starting the app on 127.0.0.1:62001 (D:\androidSDK_ld/platform-tools/adb -s 127.0.0.1:62001 shell am start -n com.awesomeproject/com.awesomeproject.MainActivity)...</span><br><span class="line">Starting: Intent &#123; cmp=com.awesomeproject/.MainActivity &#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://creamlidan.github.io/2019/05/31/nox_adb/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img>
+            <!-- <a href="https://creamlidan.github.io/2019/05/31/nox_adb/" title="adb server version (41) doesn&#39;t match this client (39); killing...">-->
+            <a href="javascript: void(0);" title="adb server version (41) doesn&#39;t match this client (39); killing...">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图">
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Web前端/">Web前端</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
     	<!-- <a href="https://creamlidan.github.io/2019/04/25/data_interval/">
     		Date时间间隔计算
     	</a>-->
@@ -329,7 +403,7 @@
     
     <li>
         <a href="/categories/Web前端/">Web前端</a>
-        <span class="badge">(3)</span>
+        <span class="badge">(4)</span>
     </li>
     
 </ul>
@@ -346,6 +420,8 @@
     <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (1)</a>
   
     <a class="tag-item" href="/tags/github/" title="github">github (1)</a>
+  
+    <a class="tag-item" href="/tags/Android-studio/" title="Android studio">Android studio (1)</a>
   
     <a class="tag-item" href="/tags/webpack/" title="webpack">webpack (1)</a>
   
