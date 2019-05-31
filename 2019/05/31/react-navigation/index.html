@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya">
+    
+    <title>react-navigation的配置使用 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="keywords" content="lidan, 前端, Web, 前端开发">
+    <meta name="description" content="lidan个人前端小站">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+</html>
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <!--<div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">Hexo</span>
+                    <span class="description"></span>
+                </div>
+            </a>
+        </div>-->
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2019/05/31/react-navigation/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2019/05/31/react-navigation/index.html" class="item ">
+                <a href="/lab/" title="DEMO" class="icon-lab">&nbsp;DEMO</a>
+            </li>
+            
+            <li rel="/2019/05/31/react-navigation/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2019/05/31/react-navigation/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/creamlidan" target="_blank">Github</a>
+                        |
+                    
+                        <a href target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        <span>只要还有明天，今天就永远是起跑线</span>
+                    <a>
+                    <!--<a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>-->
+                </a></a></p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/lidan.jpg" alt="avatar" title="Jelon">
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>react-navigation的配置使用</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        lidan 发表于
+        <time datetime="2019-05-31T05:31:22.605Z">2019-05-31</time>
+    </p>
+    <div class="post-content">
+        <ul>
+<li>安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-navigation</span><br><span class="line">npm install --save react-native-gesture-handler</span><br><span class="line">链接所有本机依赖项：</span><br><span class="line">react-native link react-native-gesture-handler</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>配置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">1. appNavigatiors 配置项页面</span><br><span class="line">import React from &apos;react&apos; </span><br><span class="line">import &#123; createStackNavigator &#125; from &apos;react-navigation&apos;</span><br><span class="line">import &#123; Button &#125; from &apos;react-native&apos;</span><br><span class="line">import HomePage from &apos;../page/HomePage&apos;</span><br><span class="line">import Page1 from &apos;../page/Page1&apos;</span><br><span class="line">import Page2 from &apos;../page/Page2&apos;</span><br><span class="line">import Page3 from &apos;../page/Page3&apos;</span><br><span class="line">import Page4 from &apos;../page/Page4&apos;</span><br><span class="line">import Page5 from &apos;../page/Page5&apos;</span><br><span class="line">import Login from &apos;../page/Login&apos;</span><br><span class="line"></span><br><span class="line">export  const AppStackNavigator = createStackNavigator(&#123;</span><br><span class="line">    HomePage:&#123;</span><br><span class="line">        screen:HomePage,</span><br><span class="line">        navigationOptions:&#123;//动态配置title</span><br><span class="line">            title:&apos;Home&apos;,</span><br><span class="line">            headerBackTitle:&apos;返回ss&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Page1:&#123;</span><br><span class="line">        screen:Page1,-</span><br><span class="line">        navigationOptions:(&#123;navigation&#125;)=&gt;(&#123;//动态配置title</span><br><span class="line">            title:`$&#123;navigation.state.params.name&#125;页面名`</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    Page2:&#123;</span><br><span class="line">        screen:Page2,</span><br><span class="line">        navigationOptions:(&#123;//静态配置title</span><br><span class="line">            title:&apos;This is Page2&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,  </span><br><span class="line">    Page3:&#123;</span><br><span class="line">        screen:Page3,</span><br><span class="line">        navigationOptions:(props) =&gt; &#123;//动态配置title</span><br><span class="line">            const &#123; navigation &#125; = props;</span><br><span class="line">            const &#123; state, setParams&#125; = navigation;</span><br><span class="line">            const &#123; params &#125; = state;</span><br><span class="line">            return &#123;</span><br><span class="line">                title:params.name?params.name:&apos;This is Page3&apos;,</span><br><span class="line">                headerRight:(</span><br><span class="line">                    &lt;Button</span><br><span class="line">                        title=&#123;params.mode === &apos;edit&apos; ? &apos;保存&apos; : &apos;编辑&apos; &#125;</span><br><span class="line">                        onPress=&#123;()=&gt;setParams(&#123;</span><br><span class="line">                            mode:params.mode === &apos;edit&apos; ? &apos;&apos;:&apos;edit&apos;</span><br><span class="line">                        &#125;)&#125;</span><br><span class="line">                    /&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Page4:&#123;</span><br><span class="line">        screen:Page4,</span><br><span class="line">        navigationOptions:(&#123;//静态配置title</span><br><span class="line">            title:&apos;This is Page4&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    Page5:&#123;</span><br><span class="line">        screen:Page5,</span><br><span class="line">        navigationOptions:(&#123;//静态配置title</span><br><span class="line">            title:&apos;This is Page5&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">2. 使用页面，入口文件index.js</span><br><span class="line">import &#123; createAppContainer &#125; from &apos;react-navigation&apos;</span><br><span class="line">import &#123; AppStackNavigator &#125; from &apos;./navigators/AppNavigators&apos;</span><br><span class="line">const AppNavigatorsContainer = createAppContainer(AppStackNavigator);</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(appName, () =&gt; AppNavigatorsContainer);</span><br><span class="line"></span><br><span class="line">3. 首页面配置使用</span><br><span class="line">render() &#123;</span><br><span class="line">    const &#123; navigation &#125; = this.props;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.pink&#125;&gt;我是HomePage&lt;/Text&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">          style=&#123;styles.marginB&#125;</span><br><span class="line">          title=&#123;&apos;go to page1&apos;&#125; </span><br><span class="line">          onPress=&#123;()=&gt;&#123;</span><br><span class="line">            navigation.navigate(&apos;Page1&apos;,&#123;name:&apos;动态传递的&apos;&#125;)</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;Button </span><br><span class="line">          title=&#123;&apos;go to page2&apos;&#125;</span><br><span class="line">          style=&#123;styles.marginB&#125;</span><br><span class="line">          onPress=&#123;()=&gt;&#123;</span><br><span class="line">            navigation.navigate(&apos;Page2&apos;)</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;Button title=&#123;&apos;go to page3&apos;&#125; onPress=&#123;()=&gt;&#123;</span><br><span class="line">          navigation.navigate(&apos;Page3&apos;,&#123;name:&apos;devio&apos;&#125;)</span><br><span class="line">        &#125;&#125;/&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/Web前端/">Web前端</a>
+        </span>
+        <!--<span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/React-Native/" title="React Native">React Native</a>
+    
+
+        </span>-->
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br>
+        <a href="/2019/05/31/react-native_icon/">
+            
+                React Native项目图标字体的使用方法
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br>
+        <a href="/2019/05/31/authorization/">
+            
+                Android手机调试不弹出授权申请导致报错！
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Web前端/">Web前端</a>
+        <span class="badge">(7)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/Javascript/" title="Javascript">Javascript (1)</a>
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (1)</a>
+  
+    <a class="tag-item" href="/tags/github/" title="github">github (1)</a>
+  
+    <a class="tag-item" href="/tags/Android-studio/" title="Android studio">Android studio (2)</a>
+  
+    <a class="tag-item" href="/tags/webpack/" title="webpack">webpack (1)</a>
+  
+    <a class="tag-item" href="/tags/React-Native/" title="React Native">React Native (2)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://www.baidu.com" target="_blank" title="百度搜索">百度</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2015-2019
+    
+
+    <a href="/">lidan Loves Life</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>
