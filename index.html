@@ -136,6 +136,73 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
+    	<a href="https://creamlidan.github.io/2019/07/30/wxChat/">
+    		微信小程序基础用法总结
+    	</a>
+        <!--<a href="javascript: void(0);">
+            微信小程序基础用法总结
+        </a>-->
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        lidan 发表于
+        <time datetime="2019-07-30T07:35:30.373Z">2019-07-30</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/微信小程序/" title="微信小程序">微信小程序</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h2 id="app-json-全局配置文件"><a href="#app-json-全局配置文件" class="headerlink" title="app.json //全局配置文件"></a>app.json //全局配置文件</h2><ul>
+<li>page  页面路由</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;pages&quot;:[</span><br><span class="line">  &quot;pages/index/index&quot;,//第一配置为首个展示内容</span><br><span class="line">  &quot;pages/logs/logs&quot;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<ul>
+<li>window  配置窗口表现</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&quot;window&quot;:&#123;</span><br><span class="line">  &quot;backgroundColor&quot;:&quot;#000000&quot;,</span><br><span class="line">  &quot;navigationBarBackgroundColor&quot;: &quot;#eee&quot;, //顶部条的背景颜色</span><br><span class="line">  &quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,//顶部条的title</span><br><span class="line">  &quot;navigationBarTextStyle&quot;:&quot;black&quot;,//顶部条的文本颜色</span><br><span class="line">  &quot;backgroundTextStyle&quot;:&quot;light&quot;,</span><br><span class="line">  &quot;enablePullDownRefresh&quot;: false //是否开启下拉</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>tabBar 底部导航 2-5</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&quot;tabBar&quot;: &#123;</span><br><span class="line">  &quot;selectedColor&quot;: &quot;#ff9500&quot;,//选中状态的颜色</span><br><span class="line">  &quot;borderStyle&quot;: &quot;block&quot;,//只支持黑白</span><br><span class="line">  &quot;position&quot;:&quot;bottom&quot;,//可定在顶部</span><br><span class="line">  &quot;list&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">      &quot;text&quot;: &quot;Home&quot;</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,</span><br><span class="line">      &quot;text&quot;: &quot;优选&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="常用生命周期"><a href="#常用生命周期" class="headerlink" title="常用生命周期"></a>常用生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// pages/padding/22.js</span><br><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 页面的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面加载</span><br><span class="line">   */</span><br><span class="line">  onLoad: function (options) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面显示</span><br><span class="line">   */</span><br><span class="line">  onShow: function () &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面卸载</span><br><span class="line">   */</span><br><span class="line">  onUnload: function () &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 页面相关事件处理函数--监听用户下拉动作</span><br><span class="line">   */</span><br><span class="line">  onPullDownRefresh: function () &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 页面上拉触底事件的处理函数</span><br><span class="line">   */</span><br><span class="line">  onReachBottom: function () &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 用户点击右上角分享</span><br><span class="line">   */</span><br><span class="line">  onShareAppMessage: function () &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line">  /**</span><br><span class="line">   * 组件的属性列表</span><br><span class="line">   */</span><br><span class="line">    properties: &#123;</span><br><span class="line">      toStartTime:String//父级传递过来的属性</span><br><span class="line">    &#125;,</span><br><span class="line">    lifetimes: &#123;</span><br><span class="line">        attached() &#123;</span><br><span class="line">            //组件创建时</span><br><span class="line">                this.setData(&#123;</span><br><span class="line">                    is_start:false,</span><br><span class="line">                &#125;,()=&gt;&#123;</span><br><span class="line">                    this.startTime();</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                this.setData(&#123;</span><br><span class="line">                    is_start:true,</span><br><span class="line">                &#125;,() =&gt; &#123;</span><br><span class="line">                    this.startTime();</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        detached() &#123;</span><br><span class="line">            //组件销毁时清除定时器 防止爆栈</span><br><span class="line">            clearInterval(this.timer);</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 组件的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line">      timer:null</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 组件的方法列表</span><br><span class="line">   */</span><br><span class="line">  methods: &#123;</span><br><span class="line">      startTime:function()&#123;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://creamlidan.github.io/2019/07/30/wxChat/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img>
+            <!-- <a href="https://creamlidan.github.io/2019/07/30/wxChat/" title="微信小程序基础用法总结">-->
+            <a href="javascript: void(0);" title="微信小程序基础用法总结">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图">
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Web前端/">Web前端</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
     	<a href="https://creamlidan.github.io/2019/06/04/rn_list/">
     		React Native 常用三种列表组件
     	</a>
@@ -655,7 +722,7 @@
     
     <li>
         <a href="/categories/Web前端/">Web前端</a>
-        <span class="badge">(8)</span>
+        <span class="badge">(9)</span>
     </li>
     
 </ul>
@@ -678,6 +745,8 @@
     <a class="tag-item" href="/tags/React-Native/" title="React Native">React Native (3)</a>
   
     <a class="tag-item" href="/tags/webpack/" title="webpack">webpack (1)</a>
+  
+    <a class="tag-item" href="/tags/微信小程序/" title="微信小程序">微信小程序 (1)</a>
   
 </div>
     </section>
