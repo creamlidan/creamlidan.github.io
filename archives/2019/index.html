@@ -136,12 +136,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/06/04/rn_list/">
+    	<a href="https://creamlidan.github.io/2019/06/04/rn_list/">
     		React Native 常用三种列表组件
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             React Native 常用三种列表组件
-        </a>
+        </a>-->
     </h3>
 
     </header>
@@ -183,82 +183,6 @@
 <p>必须要为item设置key属性，否则会有一个黄色的警告弹出。而且我们需要注意的是这里每一个item的key是唯一的！</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">keyExtractor=&#123;this._keyExtractor&#125;</span><br><span class="line"></span><br><span class="line">_keyExtractor(item, index)&#123;</span><br><span class="line">    return `index$&#123;index&#125;`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>itemLayout</li>
-</ul>
-<blockquote>
-<p>属性是一个可选的优化，用于避免动态测量内容尺寸的开销。如果我们知道item的高度，就可以为FlatList指定这一个属性，来使FlatList更加高效的运行！</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//200为item的高度,5为分割线的高度</span><br><span class="line">getItemLayout=&#123;(data, index) =&gt; (&#123;</span><br><span class="line">  length:200, offset: (200 + 5) * index, index</span><br><span class="line">&#125;)&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h4><blockquote>
-<p>FlatList中有两个属性，可以用来设置下拉刷新。</p>
-</blockquote>
-<ul>
-<li>refreshing在等待加载新数据时将此属性设为true，列表就会显示出一个正在加载的符号.</li>
-<li>onRefresh如果设置了此选项，则会在列表头部添加一个标准的RefreshControl控件，以便实现“下拉刷新”的功能。同时你需要正确设置refreshing属性。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//不需要自定义样式的时候</span><br><span class="line">/*refreshing = &#123; this.state.is_Loading &#125;</span><br><span class="line">onRefresh = &#123;()=&gt;&#123;</span><br><span class="line">    this.loadData();</span><br><span class="line">&#125;&#125;*/</span><br><span class="line"></span><br><span class="line">//修改loading样式</span><br><span class="line">refreshControl = &#123;</span><br><span class="line">    &lt;RefreshControl</span><br><span class="line">        title = &#123;&apos;loading&apos;&#125;</span><br><span class="line">        colors = &#123;[&apos;red&apos;]&#125;//android</span><br><span class="line">        tintColor = &#123;&apos;red&apos;&#125;//ios</span><br><span class="line">        refreshing = &#123; this.state.is_Loading &#125;</span><br><span class="line">        onRefresh = &#123;()=&gt;&#123;</span><br><span class="line">            this._onRefresh();</span><br><span class="line">        &#125;&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">_onRefresh()&#123;</span><br><span class="line">    ...</span><br><span class="line">    //下拉刷新的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="上拉加载"><a href="#上拉加载" class="headerlink" title="上拉加载"></a>上拉加载</h4><blockquote>
-<p>上拉加载，FlatList封装两个属性来实现：</p>
-<ul>
-<li>onEndReachedThreshold：这个属性决定当距离内容最底部还有多远时触发onEndReached回调。需要注意的是此参数是一个比值而非像素单位。比如，0.5表示距离内容最底部的距离为当前列表可见长度的一半时触发。所以它的取值范围为：(0,1)，不包含0和1。</li>
-<li>onEndReached：列表被滚动到距离内容最底部不足onEndReachedThreshold设置的的距离时调用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onEndReached =&#123;()=&gt;&#123;</span><br><span class="line">    this._onLoadMore();</span><br><span class="line">&#125;&#125;</span><br><span class="line">onEndReachedThreshold=&#123;0.1&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<h4 id="隐藏滑动指示条"><a href="#隐藏滑动指示条" class="headerlink" title="隐藏滑动指示条"></a>隐藏滑动指示条</h4><ul>
-<li><p>设置滑动为横向</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">horizontal=&#123;true&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>隐藏垂直滚动条</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">showsVerticalScrollIndicator=&#123;false&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>隐藏水平滚动条</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">showsHorizontalScrollIndicator=&#123;false&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><ul>
-<li><p>scrollToEnd 滚动条到底部</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 需要为FlatList设置ref属性绑定flatList</span><br><span class="line">&lt;FlatList ref=&#123;(flatList) =&gt; this._flatList = flatList&#125;/&gt;</span><br><span class="line">2.  调用</span><br><span class="line">_toEnd()&#123;</span><br><span class="line">    this._flatList.scrollToEnd();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>scrollToIndex 滚动到指定index位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 需要为FlatList设置ref属性绑定flatList</span><br><span class="line">&lt;FlatList ref=&#123;(flatList) =&gt; this._flatList = flatList&#125;/&gt;</span><br><span class="line"></span><br><span class="line">2.  调用</span><br><span class="line">_toItem()&#123;</span><br><span class="line">    //viewPosition参数：0表示顶部，0.5表示中部，1表示底部</span><br><span class="line">    this._flatList.scrollToIndex(&#123;viewPosition: 0, index: this.state.index&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="关于SwipeableFlatList-的使用"><a href="#关于SwipeableFlatList-的使用" class="headerlink" title="关于SwipeableFlatList 的使用"></a>关于SwipeableFlatList 的使用</h2><blockquote>
-<p>支持FlatList的所有的属性和方法,另外新增3个自有属性.</p>
-</blockquote>
-<ul>
-<li>bounceFirstRowOnMount：Boolean</li>
-</ul>
-<blockquote>
-<p>默认是true,表示第一次是否先滑一下FlatList的Item</p>
-</blockquote>
-<ul>
-<li>maxSwipeDistance <blockquote>
-<p> 必须要赋值，表示向左滑动的最大距离</p>
-</blockquote>
-</li>
-<li>renderQuickActions：func<blockquote>
-<p>必须要赋值，表示滑动显示的内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;SwipeableFlatList </span><br><span class="line">    renderQuickActions=&#123;()=&gt;this.genQuickAction()&#125;</span><br><span class="line">    maxSwipeDistance=&#123;50&#125;</span><br><span class="line">    bounceFirstRowOnMount=&#123;false&#125;/&gt;</span><br><span class="line">//渲染</span><br><span class="line">genQuickAction()&#123;</span><br><span class="line">    return &lt;View style=&#123;styles.quickContiner&#125;&gt;</span><br><span class="line">        &lt;TouchableHighlight&gt;</span><br><span class="line">            &lt;View&gt;</span><br><span class="line">            &lt;Text </span><br><span class="line">                style=&#123;styles.delText&#125;</span><br><span class="line">                onPress=&#123;()=&gt;&#123;</span><br><span class="line">                    alert(&quot;您确定要删除吗？&quot;)</span><br><span class="line">                &#125;&#125;&gt;删除&lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        &lt;/TouchableHighlight&gt;</span><br><span class="line">    &lt;/View&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<h2 id="关于SectionList-的使用"><a href="#关于SectionList-的使用" class="headerlink" title="关于SectionList 的使用"></a>关于SectionList 的使用</h2><ul>
-<li>完全跨平台</li>
-<li>支持水平布局模式</li>
-<li>行组件显示或隐藏时可配置回调事件</li>
-<li>支持单独的头部组件</li>
-<li>支持单独的尾部组件</li>
-<li>支持自定义行间分隔线</li>
-<li>支持下拉刷新</li>
-<li>支持上拉加载<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;SectionList</span><br><span class="line">    sections=&#123;this.state.CITY_NAMES&#125;//需要绑定的数据</span><br><span class="line">    renderItem=&#123;(data) =&gt; this._renderItem(data)&#125;</span><br><span class="line">    ItemSeparatorComponent = &#123;()=&gt;this._createSeparatorComponent()&#125;</span><br><span class="line">    keyExtractor=&#123;this._keyExtractor&#125;</span><br><span class="line">    renderSectionHeader=&#123;(data)=&gt;this._renderSectionHeader(data)&#125;//分组的头部</span><br><span class="line">    refreshControl = &#123;</span><br><span class="line">        &lt;RefreshControl</span><br><span class="line">            title=&#123;&apos;loading&apos;&#125;</span><br><span class="line">            colors=&#123;[&apos;red&apos;]&#125;</span><br><span class="line">            refreshing= &#123; this.state.is_Loading &#125;</span><br><span class="line">            onRefresh=&#123;() =&gt; this._onRefresh()&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">    &#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><a href="https://github.com/creamlidan/rn_list" target="_blank" rel="noopener">demo</a></p>
-
             
             <p class="more">
                 <a href="https://creamlidan.github.io/2019/06/04/rn_list/">阅读剩下更多</a>
@@ -286,12 +210,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/05/31/react-native_icon/">
+    	<a href="https://creamlidan.github.io/2019/05/31/react-native_icon/">
     		React Native项目图标字体的使用方法
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             React Native项目图标字体的使用方法
-        </a>
+        </a>-->
     </h3>
 
     </header>
@@ -350,12 +274,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/05/31/react-navigation/">
+    	<a href="https://creamlidan.github.io/2019/05/31/react-navigation/">
     		react-navigation的配置使用
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             react-navigation的配置使用
-        </a>
+        </a>-->
     </h3>
 
     </header>
@@ -407,12 +331,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/05/31/authorization/">
+    	<a href="https://creamlidan.github.io/2019/05/31/authorization/">
     		Android手机调试不弹出授权申请导致报错！
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             Android手机调试不弹出授权申请导致报错！
-        </a>
+        </a>-->
     </h3>
 
     </header>
@@ -473,12 +397,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/05/31/nox_adb/">
+    	<a href="https://creamlidan.github.io/2019/05/31/nox_adb/">
     		adb server version (41) doesn&#39;t match this client (39); killing...
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             adb server version (41) doesn&#39;t match this client (39); killing...
-        </a>
+        </a>-->
     </h3>
 
     </header>
@@ -536,12 +460,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/04/25/data_interval/">
+    	<a href="https://creamlidan.github.io/2019/04/25/data_interval/">
     		Date时间间隔计算
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             Date时间间隔计算
-        </a>
+        </a>-->
     </h3>
 
     </header>
@@ -593,12 +517,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/04/24/hexo-github/">
+    	<a href="https://creamlidan.github.io/2019/04/24/hexo-github/">
     		hexo+github
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             hexo+github
-        </a>
+        </a>-->
     </h3>
 
     </header>
@@ -661,12 +585,12 @@
         <!-- 文章标题 -->
         
     <h3 class="post-title">
-    	<!-- <a href="https://creamlidan.github.io/2019/04/23/webpack/">
+    	<a href="https://creamlidan.github.io/2019/04/23/webpack/">
     		webpack
-    	</a>-->
-        <a href="javascript: void(0);">
+    	</a>
+        <!--<a href="javascript: void(0);">
             webpack
-        </a>
+        </a>-->
     </h3>
 
     </header>
